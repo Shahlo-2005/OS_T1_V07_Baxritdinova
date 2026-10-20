@@ -1,0 +1,13 @@
+name: Compile C Code
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Compile task2.c
+      run: |
+        gcc task2.c -o task2 -Wall -Wextra
+        ./task2
